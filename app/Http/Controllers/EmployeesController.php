@@ -1,7 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 /**
- * Class ApplicationsController
+ * Class EmployeesController
  *
  * Controller
  *
@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\DB;
 use Auth;
 use Session;
 
-class ApplicationsController extends Controller
+class EmployeesController extends Controller
 {
 
     /**
@@ -28,6 +28,6 @@ class ApplicationsController extends Controller
      */
     public function index()
     {
-        return Response::json(Applications::get());
+        return Response::json(Employees::get());
     }
 }

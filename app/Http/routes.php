@@ -11,4 +11,8 @@
 |
 */
 
-Route::get('/', 'ApplicationsController@index');
+Route::get('/', function () {
+    return view('pages/index');
+});
+
+Route::get('/api/v1/employees/{id?}', 'Employees@index');

@@ -1,7 +1,7 @@
 <?php namespace App\Models;
 
 /**
- * Class Applications
+ * Class Employees
  *
  * Model
  *
@@ -13,14 +13,14 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Applications extends Model
+class Employees extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = "applications";
+    protected $table = "employees";
 
     /**
      * The attributes that are mass assignable.
