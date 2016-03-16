@@ -1,2 +1,3 @@
-var app = angular.module('employeeRecords', [])
-    .constant('API_URL', 'http://angular.dev/');
+var app = angular.module('acctTrackerApp', [
+    'EmployeesController',
+    'EmployeesService']);

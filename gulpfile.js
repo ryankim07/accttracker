@@ -25,7 +25,6 @@ elixir(function(mix) {
 
     mix.scripts([
         "vendor/jquery/dist/jquery.min.js",
-        "vendor/jquery-ui/jquery-ui.min.js",
         "vendor/moment/min/moment.min.js",
         "vendor/bootstrap/dist/js/bootstrap.min.js",
         "vendor/bootstrap-select/dist/js/bootstrap-select.min.js",
@@ -34,4 +33,5 @@ elixir(function(mix) {
 
     mix.copy("resources/assets/vendor/font-awesome/fonts", "public/fonts");
     mix.copy("resources/assets/vendor/angular/angular.min.js", "public/app/lib/angular");
+    mix.copy("resources/assets/vendor/angular-route/angular-route.min.js", "public/app/lib/angular");
 });

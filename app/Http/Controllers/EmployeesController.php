@@ -12,11 +12,9 @@
  */
 
 use App\Http\Requests;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-use Auth;
-use Session;
+use App\Models\Employees;
+use Response;
 
 class EmployeesController extends Controller
 {
@@ -28,6 +26,8 @@ class EmployeesController extends Controller
      */
     public function index()
     {
-        return Response::json(Employees::get());
+        $employees = Employees::all();
+
+        return $employees;
     }
 }

@@ -11,8 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages/index');
+Route::get('/', function() {
+    return view('layout.master');
 });
 
-Route::get('/api/v1/employees/{id?}', 'Employees@index');
+// API ROUTES ==================================
+Route::group(array('prefix' => 'api'), function() {
+
+    // since we will be using this just for CRUD, we won't need create and edit
+    // Angular will handle both of those forms
+    // this ensures that a user can't access api/create or api/edit when there's nothing there
+    Route::resource('employees', 'EmployeesController',
+        array('only' => array('index')));
+
+});
+
+Blade::setContentTags('<%', '%>');
+Blade::setEscapedContentTags('<%%', '%%>');
