@@ -1,7 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 /**
- * Class EmployeesController
+ * Class DepartmentsController
  *
  * Controller
  *
@@ -13,9 +13,9 @@
 
 use App\Http\Requests;
 
-use App\Models\Employees;
+use App\Models\Departments;
 
-class EmployeesController extends Controller
+class DepartmentsController extends Controller
 {
 
     /**
@@ -25,8 +25,8 @@ class EmployeesController extends Controller
      */
     public function index()
     {
-        $employees = Employees::all();
+        $departments = Departments::all();
 
-        return $employees;
+        return $departments;
     }
 }

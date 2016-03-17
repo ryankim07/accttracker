@@ -1,15 +1,4 @@
-var elixir = require('laravel-elixir');
-
-/*
- |--------------------------------------------------------------------------
- | Elixir Asset Management
- |--------------------------------------------------------------------------
- |
- | Elixir provides a clean, fluent API for defining some basic Gulp tasks
- | for your Laravel application. By default, we are compiling the Sass
- | file for our application, as well as publishing vendor resources.
- |
- */
+var elixir   = require('laravel-elixir');
 var bowerDir = 'vendor/';
 
 elixir(function(mix) {
@@ -25,6 +14,8 @@ elixir(function(mix) {
 
     mix.scripts([
         "vendor/jquery/dist/jquery.min.js",
+        "vendor/angular/angular.min.js",
+        "vendor/angular-route/angular-route.min.js",
         "vendor/moment/min/moment.min.js",
         "vendor/bootstrap/dist/js/bootstrap.min.js",
         "vendor/bootstrap-select/dist/js/bootstrap-select.min.js",
@@ -32,6 +23,5 @@ elixir(function(mix) {
     ], "public/js/app.js", "resources/assets");
 
     mix.copy("resources/assets/vendor/font-awesome/fonts", "public/fonts");
-    mix.copy("resources/assets/vendor/angular/angular.min.js", "public/app/lib/angular");
-    mix.copy("resources/assets/vendor/angular-route/angular-route.min.js", "public/app/lib/angular");
+    mix.copy("resources/assets/js/main.js", "public/js/main.js")
 });

@@ -17,14 +17,17 @@ Route::get('/', function() {
 
 // API ROUTES ==================================
 Route::group(array('prefix' => 'api'), function() {
-
-    // since we will be using this just for CRUD, we won't need create and edit
-    // Angular will handle both of those forms
-    // this ensures that a user can't access api/create or api/edit when there's nothing there
     Route::resource('employees', 'EmployeesController',
         array('only' => array('index')));
 
+    Route::resource('departments', 'DepartmentsController',
+        array('only' => array('index')));
 });
+
+// Catch all undefined routes. Always gotta stay at the bottom since order of routes matters.
+Route::any('{undefinedRoute}', function ($undefinedRoute) {
+    return view('layout.master');
+})->where('undefinedRoute', '([A-z\d-\/_.]+)?');
 
 Blade::setContentTags('<%', '%>');
 Blade::setEscapedContentTags('<%%', '%%>');

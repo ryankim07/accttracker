@@ -1,0 +1,315 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px;
+}
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+
+.navbar-fixed-top {
+    border: 0;
+}
+
+/*
+ * Main layout
+ */
+
+@media (min-width: 768px) {
+    .main, #register-main, #view-all-users-main {
+        left: 0px;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}
+
+.main .page-header {
+    margin-top: 0;
+}
+
+/*
+ * Panel
+ */
+
+.panel {
+    margin-top: 20px;
+}
+
+.nested-block {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #f7f7f8;
+    border-color: #eee #eee #eee #d4d5d9;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px 1px 1px 5px;
+    margin: 5px 0 10px 0px;
+    padding: 20px 30px 0 20px;
+    position: relative;
+}
+
+.jumbotron {
+    background-color: #f7f7f8;
+}
+
+#response-main .nested-block:first-child,
+#respond-main  .nested-block:first-child {
+    margin-top: 20px;
+}
+
+#system-main-panel-body,
+#response-main .panel-body, #respond-main .panel-body {
+    min-height: 500px;
+}
+
+#response-main legend, #respond-main legend {
+    font-size: 18.5px;
+}
+
+/*
+ * Tables
+ */
+
+.table-responsive:not(.dashboard-table, #review-main) {
+    min-height: 500px;
+    overflow-y: auto;
+}
+
+.table-responsive:not(.dashboard-table, #review-main) tbody tr:hover {
+    color: green;
+}
+
+.table-options {
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+.table-list {
+    margin-bottom: 100px;
+}
+
+/*
+ * Dashboard
+ */
+
+#dashboard-main .activity-comment-area {
+    display: none;
+}
+
+#dashboard-main .nested-block {
+    padding: 10px 10px 10px 10px;
+}
+
+#dashboard-main .comment-line {
+    font-size: 12px;
+}
+
+.respond legend {
+    font-size: 18.5px;
+}
+
+.review-testers {
+    vertical-align: top;
+    display: inline-block;
+    width: 80px;
+}
+
+.review-testers .caption {
+    display: block;
+}
+
+/*
+ * System Configuration
+ */
+
+#system-edit-form .btn {
+    position: relative;
+    top: 10px;
+}
+
+#system-main .nav-pills > li.active > a {
+    background: #777777;
+    color: #FFFFFF;
+}
+
+#system-main .nav-pills > li.active > a:hover {
+    background: #777777;
+    color: #FFFFFF;
+}
+
+.system-sub-panel-body .control-label {
+    text-align: left;
+}
+
+.tab-content .panel {
+    margin-top: 0px;
+}
+
+.tab-content .page-header {
+    margin-bottom: 30px;
+}
+
+
+/*
+ * Plan Wizard
+ */
+
+.plan-wizard .nested-block {
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    color: #31708f;
+}
+
+#review-main .table {
+    margin-top: 30px;
+}
+
+#review-main .table tr{
+    background-color: #FFFFFF;
+}
+
+#review-main .page-header:nth-child(n+2) {
+    margin-top: 30px;
+}
+
+#review-main .review-text {
+    margin-left: -1.5em;
+}
+
+#review-main h5 {
+    color: #000;
+}
+
+
+/*
+ * Images
+ */
+.trash, .pencil {
+    position:absolute;
+    margin-top: 8px;
+    margin-right: 6px;
+    top:0;
+    right:0;
+    line-height: 12px;
+    color: #777777;
+}
+
+#step-3-main img {
+    width: 64px;
+    height: 64px;
+}
+
+#review-main img, #view-main img {
+    width: 32px;
+    height: 32px;
+}
+
+#review-main .trash {
+    position:absolute;
+    margin-top: 8px;
+    margin-right: 30px;
+    top:0;
+    right:0;
+    color: #777777;
+}
+
+#review-main .fa-tag, .fa-calendar,
+.fa-star, .fa-sort-numeric-asc {
+    color: #000;
+}
+
+#response-main img, #respond-main img {
+    width: 32px;
+    height: 32px;
+}
+
+.header-icon {
+    float:left;
+    min-width: 54px;
+}
+
+.plan-wizard .header-icon {
+    min-width: 64px;
+}
+
+#view-all-created-main .header-icon {
+    min-width: 64px;
+}
+
+
+/*
+ * Buttons
+ */
+.btn-custom, .panel-custom {
+    background: #777777;
+    border-color: #777777;
+    color: #FFFFFF;
+}
+
+.clear-btn {
+    cursor: pointer;
+}
+
+#step-2-main #add-ticket-btn {
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    color: #fff;
+}
+
+#step-2-main #add-ticket-btn #another-ticket-text,
+#view-main #add-ticket-btn #another-ticket-text {
+    margin-left: 5px;
+}
+
+/*
+ * Pagination
+ */
+#dashboard-main .pagination {
+    margin: 0px;
+}
+
+.dropdown-menu a.menu-link {
+    position: relative;
+    padding-left: 10px;
+}
+
+.dropdown-menu .menu-link-icon {
+    padding-right: 5px;
+}
+
+
+/*
+ * Animations
+ */
+
+#loadingSpinner {
+    position: relative;
+    margin: 0 auto;
+    top: -50%;
+    width: 200px;
+    height: 19px;
+    z-index: 9999;
+    background: #fff;
+}
+
+.progress {
+    position: relative;
+    top: 10px;
+    margin-bottom: 0px;
+}
