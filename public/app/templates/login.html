@@ -1,0 +1,48 @@
+<div class="col-xs-12 col-md-4 col-md-offset-4 main" id="login-main">
+    <form method="POST" class="form-horizontal" id="auth-login-form">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>Login</h4>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="col-xs-12 col-md-8">
+                        <label for="email_label">E-Mail Address / Username</label>
+                        <div class="input-group">
+                            <input class="form-control input-sm" type="email" ng-model="auth.email">
+                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-xs-12 col-md-8">
+                        <label for="password_label">Password</label>
+                        <div class="input-group">
+                            <input class="form-control input-sm" type="password" ng-model="auth.password">
+                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-key"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-12">
+                    <div class="clearfix">
+                        <div class="pull-left">
+                            <button class="btn btn-custom btn-sm" value="Login" ng-click="auth.login()">Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12 col-md-6">
+                        <input class="" aria-required="true" id="remember" name="remember" type="checkbox" value="1">
+                        <label for="Remember me">Remember Me</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12 col-md-6">
+                        <a href="http://tp.mophie.us/password/getEmail">Forgot Your Password?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

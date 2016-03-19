@@ -26,7 +26,19 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'email',
+        'password'
+    ];
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $guarded = array('id');
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -34,4 +46,20 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    /**
+     * Authenticate a user by username and password.
+     *
+     * @param string $username The username
+     * @param string $password Plain text password
+     * @return bool|user The user if the password matches the user's stored password, false otherwise.
+     */
+    public function authenticate($username, $password)
+    {
+        $user = User::where('username', $username)->first();
+        if (!Hash::check($password, $user->password)) {
+            return false;
+        }
+        return $user;
+    }
 }

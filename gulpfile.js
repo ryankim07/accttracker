@@ -16,6 +16,8 @@ elixir(function(mix) {
         "vendor/jquery/dist/jquery.min.js",
         "vendor/angular/angular.min.js",
         "vendor/angular-route/angular-route.min.js",
+        "vendor/angular-ui-router/release/angular-ui-router.min.js",
+        "vendor/satellizer/satellizer.min.js",
         "vendor/moment/min/moment.min.js",
         "vendor/bootstrap/dist/js/bootstrap.min.js",
         "vendor/bootstrap-select/dist/js/bootstrap-select.min.js",

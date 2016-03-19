@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model' => App\User::class,
+    'model' => App\Models\User::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -63,5 +63,4 @@ return [
         'table' => 'password_resets',
         'expire' => 60,
     ],
-
 ];

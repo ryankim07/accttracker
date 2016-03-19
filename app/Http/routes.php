@@ -11,12 +11,17 @@
 |
 */
 
-Route::get('/', function() {
+
+Route::get('/', ['as' => 'home', function() {
     return view('layout.master');
-});
+}]);
 
 // API ROUTES ==================================
 Route::group(array('prefix' => 'api'), function() {
+    Route::resource('authenticate', 'AuthenticateController', ['only' => ['index']]);
+    Route::post('authenticate', 'AuthenticateController@authenticate');
+    Route::get('authenticate/user', 'AuthenticateController@getAuthenticatedUser');
+
     Route::resource('employees', 'EmployeesController',
         array('only' => array('index')));
 

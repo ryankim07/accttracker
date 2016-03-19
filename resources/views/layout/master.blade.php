@@ -34,11 +34,12 @@
 @include('layout.header')
 
 <div class="container-fluid">
-    <div class="row-fluid">
-        <div ng-view></div>
+    <div class="row-fluid" ui-view>
     </div>
 </div>
 
+{!! Html::script('app/controllers/AuthController.js') !!}
+{!! Html::script('app/controllers/UsersController.js') !!}
 {!! Html::script('app/controllers/MainController.js') !!}
 {!! Html::script('app/controllers/DepartmentsController.js') !!}
 {!! Html::script('app/controllers/EmployeesController.js') !!}
