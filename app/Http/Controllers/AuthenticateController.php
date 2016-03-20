@@ -18,8 +18,6 @@ use Tymon\JWTAuth\Exceptions\JWTException;
 
 use JWTAuth;
 
-use App\Models\User;
-
 class AuthenticateController extends Controller
 {
     public function __construct()
@@ -29,8 +27,6 @@ class AuthenticateController extends Controller
 
     public function index()
     {
-        $users = User::all();
-        return $users;
     }
 
     public function authenticate(Request $request)

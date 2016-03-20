@@ -22,11 +22,15 @@ Route::group(array('prefix' => 'api'), function() {
     Route::post('authenticate', 'AuthenticateController@authenticate');
     Route::get('authenticate/user', 'AuthenticateController@getAuthenticatedUser');
 
+    Route::resource('dashboard', 'DashboardController', ['only' => ['index']]);
+
     Route::resource('employees', 'EmployeesController',
         array('only' => array('index')));
 
     Route::resource('departments', 'DepartmentsController',
         array('only' => array('index')));
+
+    Route::resource('users', 'UsersController', ['only' => ['index']]);
 });
 
 // Catch all undefined routes. Always gotta stay at the bottom since order of routes matters.

@@ -1,9 +1,10 @@
 angular.module('MainController', [])
-    .controller('MainController', function($scope, $http) {
+    .controller('MainController', function($http, $auth, $rootScope, $state) {
 
-    $scope.message = 'Test';
+     var vm = this;
+        
+     vm.logout = function() {
 
-    Main.get().success(function(data) {
-        $scope.message = data;
-    });
+        alert('hello');
+     }
 });

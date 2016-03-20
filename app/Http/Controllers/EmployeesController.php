@@ -17,6 +17,13 @@ use App\Models\Employees;
 
 class EmployeesController extends Controller
 {
+    /**
+     * EmployeesController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('jwt.auth');
+    }
 
     /**
      * Display a listing of the resource.

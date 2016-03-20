@@ -2,6 +2,8 @@ var acctTrackerApp = angular.module('acctTrackerApp', [
     'ui.router',
     'satellizer',
     'AuthController',
+    'HeaderController',
+    'DashboardController',
     'UsersController',
     'DepartmentsController',
     'EmployeesController',
@@ -66,19 +68,44 @@ acctTrackerApp
                 templateUrl: '/app/templates/login.html',
                 controller: 'AuthController as auth'
             })
+            .state('dashboard', {
+                url: '/dashboard',
+                templateUrl: '/app/templates/dashboard.html',
+                controller: 'DashboardController as dashboard'
+            })
+            .state('departments', {
+                url: '/departments',
+                templateUrl: '/app/templates/departments.html',
+                controller: 'DepartmentsController as dept'
+            })
+            .state('employees', {
+                url: '/employees',
+                templateUrl: '/app/templates/employees.html'
+            })
+            .state('accounts', {
+                url: '/accounts',
+                templateUrl: '/app/templates/accounts.html'
+            })
+            .state('applications', {
+                url: '/applications',
+                templateUrl: '/app/templates/applications.html'
+            })
             .state('users', {
                 url: '/users',
                 templateUrl: '/app/templates/users.html',
                 controller: 'UsersController as user'
+            })
+            .state('system', {
+                url: '/system',
+                templateUrl: '/app/templates/system.html'
             });
 
         $locationProvider.html5Mode(true);
     })
     .run(function($rootScope, $state) {
-
         // $stateChangeStart is fired whenever the state changes. We can use some parameters
         // such as toState to hook into details about the state as it is changing
-        $rootScope.$on('$stateChangeStart', function(event, toState) {
+        $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState) {
 
             // Grab the user from local storage and parse it to an object
             var user = JSON.parse(localStorage.getItem('user'));
@@ -87,7 +114,7 @@ acctTrackerApp
             // likely authenticated. If their token is expired, or if they are
             // otherwise not actually authenticated, they will be redirected to
             // the auth state because of the rejected request anyway
-            if(user) {
+            if (user) {
 
                 // The user's authenticated state gets flipped to
                 // true so we can now show parts of the UI that rely
@@ -101,15 +128,19 @@ acctTrackerApp
 
                 // If the user is logged in and we hit the auth route we don't need
                 // to stay there and can send the user to the main state
-                if(toState.name === "auth") {
+                if (toState.name === "auth") {
 
                     // Preventing the default behavior allows us to use $state.go
                     // to change states
                     event.preventDefault();
 
-                    // go to the "main" state which in our case is users
-                    $state.go('users');
+                    // go to the "main" state which in our case is auth
+                    $state.go('auth');
                 }
+            } else if (toState.name !== "auth") {
+                // Prevent other routes when typed directly in url
+                event.preventDefault();
+                $state.go('auth');
             }
         });
     });
