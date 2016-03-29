@@ -14,13 +14,12 @@ class CreateAccountsTable extends Migration
     {
         Schema::create('accounts', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('employee_id')->unsigned();
-            $table->foreign('employee_id')->references('id')->on('employees');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->integer('app_id')->unsigned();
             $table->foreign('app_id')->references('id')->on('applications');
             $table->string('username', 50);
             $table->string('password', 20);
-            $table->boolean('active');
             $table->timestamps();
         });
     }
