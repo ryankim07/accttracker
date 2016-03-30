@@ -1,16 +1,13 @@
 var acctTrackerApp = angular.module('acctTrackerApp', [
     'ui.router',
     'satellizer',
-    'AuthController',
     'HeaderController',
+    'AuthController',
     'DashboardController',
+    'ApplicationsController',
     'UsersController',
-    'DepartmentsController',
-    'EmployeesController',
-    'MainController',
-    'DepartmentsService',
-    'EmployeesService',
-    ]);
+    'ApplicationsService'
+]);
 
 
 acctTrackerApp
@@ -73,22 +70,10 @@ acctTrackerApp
                 templateUrl: '/app/templates/dashboard.html',
                 controller: 'DashboardController as dashboard'
             })
-            .state('departments', {
-                url: '/departments',
-                templateUrl: '/app/templates/departments.html',
-                controller: 'DepartmentsController as dept'
-            })
-            .state('employees', {
-                url: '/employees',
-                templateUrl: '/app/templates/employees.html'
-            })
-            .state('accounts', {
-                url: '/accounts',
-                templateUrl: '/app/templates/accounts.html'
-            })
             .state('applications', {
                 url: '/applications',
-                templateUrl: '/app/templates/applications.html'
+                templateUrl: '/app/templates/applications.html',
+                controller: 'ApplicationsController as apps'
             })
             .state('users', {
                 url: '/users',

@@ -37,15 +37,13 @@
     <div class="row-fluid" ui-view></div>
 </div>
 
-{!! Html::script('app/controllers/AuthController.js') !!}
 {!! Html::script('app/controllers/HeaderController.js') !!}
+{!! Html::script('app/controllers/AuthController.js') !!}
 {!! Html::script('app/controllers/DashboardController.js') !!}
 {!! Html::script('app/controllers/UsersController.js') !!}
-{!! Html::script('app/controllers/MainController.js') !!}
-{!! Html::script('app/controllers/DepartmentsController.js') !!}
-{!! Html::script('app/controllers/EmployeesController.js') !!}
-{!! Html::script('app/services/DepartmentsService.js') !!}
-{!! Html::script('app/services/EmployeesService.js') !!}
+{!! Html::script('app/controllers/ApplicationsController.js') !!}
+
+{!! Html::script('app/services/ApplicationsService.js') !!}
 
 </body>
 </html>

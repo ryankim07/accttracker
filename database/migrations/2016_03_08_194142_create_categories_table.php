@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEmployeesTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,10 @@ class CreateEmployeesTable extends Migration
      */
     public function up()
     {
-        Schema::create('employees', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('dept_id')->unsigned();
-            $table->foreign('dept_id')->references('id')->on('departments');
-            $table->string('first_name', 100);
-            $table->string('last_name', 100);
+            $table->string('name', 50);
+            $table->string('description', 255);
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateEmployeesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('employees');
+        Schema::drop('categories');
     }
 }

@@ -14,8 +14,9 @@ class CreateApplicationsTable extends Migration
     {
         Schema::create('applications', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('cat_id')->unsigned();
+            $table->foreign('cat_id')->references('id')->on('categories');
             $table->string('name', 100);
-            $table->string('type', 100);
             $table->string('url', 255);
             $table->timestamps();
         });

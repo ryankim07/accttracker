@@ -1,4 +1,52 @@
-<div class="jumbotron text-center">
-    <h1>Applications</h1>
-    <p>This page demonstrates <span class="text-danger">nested</span> views.</p>
+<div class="col-xs-12 col-md-12 main" id="view-all-created-main">
+
+    <form class="form-horizontal">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <i class="fa fa-cogs fa-3x header-icon"></i>
+                    <h4>Applications</h4>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="row table-options">
+                <div class="pull-right">
+                    <button class="btn btn-custom btn-sm">Search</button>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover table-bordered">
+
+                    <thead>
+                        <tr>
+                            <td>Name</td>
+                            <td>View Details</td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr ng-repeat="app in apps.applications">
+                        <td>{{ app.name }}</td>
+                        <td class="text-center"><a href="" class="edit-link"><i class="fa fa-search fa-lg"></i></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    </form>
+
+    <!-- pagination -->
+
 </div>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+    });
+
+</script>

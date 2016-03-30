@@ -20,6 +20,7 @@ class CreateAccountsTable extends Migration
             $table->foreign('app_id')->references('id')->on('applications');
             $table->string('username', 50);
             $table->string('password', 20);
+            $table->longText('notes');
             $table->timestamps();
         });
     }

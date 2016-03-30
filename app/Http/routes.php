@@ -22,13 +22,9 @@ Route::group(array('prefix' => 'api'), function() {
     Route::post('authenticate', 'AuthenticateController@authenticate');
     Route::get('authenticate/user', 'AuthenticateController@getAuthenticatedUser');
 
-    Route::resource('dashboard', 'DashboardController', ['only' => ['index']]);
+    Route::resource('applications/{userId}', 'ApplicationsController', ['only' => ['index']]);
 
-    Route::resource('employees', 'EmployeesController',
-        array('only' => array('index')));
-
-    Route::resource('departments', 'DepartmentsController',
-        array('only' => array('index')));
+    Route::resource('system', 'SystemController', ['only' => ['index']]);
 
     Route::resource('users', 'UsersController', ['only' => ['index']]);
 });

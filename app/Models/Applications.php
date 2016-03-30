@@ -1,26 +1,26 @@
 <?php namespace App\Models;
 
 /**
- * Class Departments
+ * Class Applications
  *
  * Model
  *
  * @author     Ryan Kim
- * @category   Mophie
+ * @category   AT
  * @package    Account Tracker
- * @copyright  Copyright (c) 2016 mophie (https://at.nophie.us)
+ * @copyright  Copyright (c) 2016 Ryan's Tools (https://ryanstools.com)
  */
 
 use Illuminate\Database\Eloquent\Model;
 
-class Departments extends Model
+class Applications extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = "departments";
+    protected $table = 'applications';
 
     /**
      * The attributes that are mass assignable.
@@ -28,7 +28,9 @@ class Departments extends Model
      * @var array
      */
     protected $fillable = [
-        'name'
+        'name',
+        'type',
+        'url'
     ];
 
     /**
@@ -37,4 +39,9 @@ class Departments extends Model
      * @var array
      */
     protected $guarded = array('id');
+
+    public function account()
+    {
+        return $this->belongsTo('App\Models\Accounts');
+    }
 }
