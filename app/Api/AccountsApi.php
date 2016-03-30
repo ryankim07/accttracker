@@ -1,7 +1,7 @@
 <?php namespace App\Api;
 
 /**
- * Class ApplicationsApi
+ * Class AccountsApi
  *
  * API
  *
@@ -16,32 +16,32 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
 use PhpSpec\Exception\Exception;
 
-use App\Models\Applications;
+use App\Models\Accounts;
 
-class ApplicationsApi
+class AccountsApi
 {
     /**
-     * @var Applications
+     * @var Accounts
      */
     protected $model;
 
     /**
-     * Applications constructor.
+     * Accounts constructor.
      *
-     * @param Applications $applications
+     * @param Accounts $accounts
      */
-    public function __construct(Applications $applications)
+    public function __construct(Accounts $accounts)
     {
-        $this->model = $applications;
+        $this->model = $accounts;
     }
 
     /**
-     * Get all applications.
+     * Get all accounts.
      *
      * @param $userId
      * @return mixed
      */
-    public function getAllApplications($userId)
+    public function getAllAccounts($userId)
     {
         $results = DB::table('accounts AS acct')
             ->join('applications AS app', 'app.id', '=', 'acct.app_id')

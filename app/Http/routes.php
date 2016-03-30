@@ -22,7 +22,7 @@ Route::group(array('prefix' => 'api'), function() {
     Route::post('authenticate', 'AuthenticateController@authenticate');
     Route::get('authenticate/user', 'AuthenticateController@getAuthenticatedUser');
 
-    Route::resource('applications/{userId}', 'ApplicationsController', ['only' => ['index']]);
+    Route::resource('accounts/{userId}', 'AccountsController', ['only' => ['index']]);
 
     Route::resource('system', 'SystemController', ['only' => ['index']]);
 

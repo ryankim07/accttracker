@@ -12,10 +12,10 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-left">
                 <li class="dropdown" ng-show="authenticated">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Applications <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Accounts <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li>
-                            <a ui-sref="applications" class="menu-link"><i class="fa fa-television menu-link-icon"></i>View All</a>
+                            <a ui-sref="accounts" class="menu-link"><i class="fa fa-television menu-link-icon"></i>View All</a>
                         </li>
                     </ul>
                 </li>

@@ -31,7 +31,8 @@ class Accounts extends Model
         'user_id',
         'app_id',
         'username',
-        'password'
+        'password',
+        'notes'
     ];
 
     /**

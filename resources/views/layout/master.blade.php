@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="acctTrackerApp">
+<html lang="en" ng-app="toolsApp">
 <head>
     <base href="/">
     <meta charset="utf-8">
@@ -41,9 +41,9 @@
 {!! Html::script('app/controllers/AuthController.js') !!}
 {!! Html::script('app/controllers/DashboardController.js') !!}
 {!! Html::script('app/controllers/UsersController.js') !!}
-{!! Html::script('app/controllers/ApplicationsController.js') !!}
+{!! Html::script('app/controllers/AccountsController.js') !!}
 
-{!! Html::script('app/services/ApplicationsService.js') !!}
+{!! Html::script('app/services/AccountsService.js') !!}
 
 </body>
 </html>

@@ -1,16 +1,16 @@
-var acctTrackerApp = angular.module('acctTrackerApp', [
+var toolsApp = angular.module('toolsApp', [
     'ui.router',
     'satellizer',
     'HeaderController',
     'AuthController',
     'DashboardController',
-    'ApplicationsController',
+    'AccountsController',
     'UsersController',
-    'ApplicationsService'
+    'AccountsService'
 ]);
 
 
-acctTrackerApp
+toolsApp
     .config(function($stateProvider, $urlRouterProvider, $authProvider, $httpProvider, $provide, $locationProvider) {
 
         function redirectWhenLoggedOut($q, $injector) {
@@ -70,10 +70,10 @@ acctTrackerApp
                 templateUrl: '/app/templates/dashboard.html',
                 controller: 'DashboardController as dashboard'
             })
-            .state('applications', {
-                url: '/applications',
-                templateUrl: '/app/templates/applications.html',
-                controller: 'ApplicationsController as apps'
+            .state('accounts', {
+                url: '/accounts',
+                templateUrl: '/app/templates/accounts.html',
+                controller: 'AccountsController as accts'
             })
             .state('users', {
                 url: '/users',

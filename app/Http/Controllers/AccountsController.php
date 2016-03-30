@@ -1,7 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 /**
- * Class ApplicationsController
+ * Class AccountsController
  *
  * Controller
  *
@@ -13,23 +13,23 @@
 
 use App\Http\Requests;
 
-use App\Api\ApplicationsApi;
+use App\Api\AccountsApi;
 
-class ApplicationsController extends Controller
+class AccountsController extends Controller
 {
     /**
-     * @var Applications Api
+     * @var Accounts Api
      */
-    protected $applicationsApi;
+    protected $accountsApi;
 
     /**
-     * PlansController constructor.
+     * AccountsController constructor.
      */
-    public function __construct(ApplicationsApi $applicationsApi)
+    public function __construct(AccountsApi $accountsApi)
     {
         $this->middleware('jwt.auth');
 
-        $this->applicationsApi = $applicationsApi;
+        $this->accountsApi = $accountsApi;
     }
 
     /**
@@ -39,7 +39,7 @@ class ApplicationsController extends Controller
      */
     public function index($userId)
     {
-        $apps = $this->applicationsApi->getAllApplications($userId);
+        $apps = $this->accountsApi->getAllAccounts($userId);
         
         return $apps;
     }
