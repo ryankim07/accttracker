@@ -17,26 +17,30 @@
                     <button class="btn btn-custom btn-sm">Search</button>
                 </div>
             </div>
-            <div class="col-xs-12 col-md-6">
+            <div class="col-xs-12 col-md-12" id="main-table">
                 <div class="table-responsive">
                     <table class="table table-striped table-hover table-bordered">
                         <thead>
                             <tr>
                                 <td>Category</td>
                                 <td>Name</td>
+                                <td>Username</td>
+                                <td>Password</td>
                             </tr>
                         </thead>
                         <tbody>
                         <tr ng-repeat="acct in accts.accounts">
                             <td>{{ acct.category }}</td>
                             <td><a href="" ng-click="accts.showSideBar(acct)">{{ acct.name }}</a></td>
+                            <td>{{ acct.username }}</td>
+                            <td>{{ acct.password }}</td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div class="col-xs-12 col-md-6">
-                <div class="" id="viewer-main">
+            <div class="col-xs-0 col-md-0" id="main-viewer" ng-show="accts.sideBar">
+                <div class="viewer-responsive" >
                     <div class="form-group">
                         <div class="">
                             <label for="category">Category</label>

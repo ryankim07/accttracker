@@ -1,8 +1,8 @@
 angular.module('AccountsService', [])
-    .factory('Accounts', function($http, $rootScope) {
+    .factory('Accounts', function($http) {
         return {
-            get : function() {
-                return $http.get('/api/accounts/' + $rootScope.currentUser.id);
+            get : function(id) {
+                return $http.get('/api/accounts/' + id);
             }
         }
     }

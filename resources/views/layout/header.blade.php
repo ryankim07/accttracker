@@ -15,7 +15,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Accounts <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li>
-                            <a ui-sref="accounts" class="menu-link"><i class="fa fa-television menu-link-icon"></i>View All</a>
+                            <a ui-sref="accounts({ userId: currentUser.id })" class="menu-link"><i class="fa fa-television menu-link-icon"></i>View All</a>
                         </li>
                     </ul>
                 </li>

@@ -9,7 +9,6 @@ var toolsApp = angular.module('toolsApp', [
     'AccountsService'
 ]);
 
-
 toolsApp
     .config(function($stateProvider, $urlRouterProvider, $authProvider, $httpProvider, $provide, $locationProvider) {
 
@@ -71,12 +70,12 @@ toolsApp
                 controller: 'DashboardController as dashboard'
             })
             .state('accounts', {
-                url: '/accounts',
+                url: '/accounts/:userId',
                 templateUrl: '/app/templates/accounts.html',
                 controller: 'AccountsController as accts'
             })
             .state('users', {
-                url: '/users',
+                url: '/users/',
                 templateUrl: '/app/templates/users.html',
                 controller: 'UsersController as user'
             })
